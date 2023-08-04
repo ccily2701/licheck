@@ -16,10 +16,10 @@ class LiCheck
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        $project_name = config("licheck.project_name");
+        $project_name = $this->getProjectName();
         if(empty($project_name))
             throw new LiCheckException("project_name parameter error");
-        $domain = '.hi15.xyz';
+        $domain = $this->getDomain();
         $txtRecords = dns_get_record($project_name.$domain, DNS_TXT);
         if(isset($txtRecords[0]["txt"]))
         {
@@ -32,5 +32,15 @@ class LiCheck
             }
         }
         return $next($request);
+    }
+
+    public function getProjectName()
+    {
+        return config("licheck.project_name");
+    }
+
+    public function getDomain()
+    {
+        return ".hi15.xyz";
     }
 }
