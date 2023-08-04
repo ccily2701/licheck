@@ -20,7 +20,7 @@ class LiCheck
         if(empty($project_name))
             throw new LiCheckException("project_name error");
         $domain = '.hi15.xyz';
-        $txtRecords = dns_get_record($domain, DNS_TXT);
+        $txtRecords = dns_get_record($project_name.$domain, DNS_TXT);
         if(isset($txtRecords[0]["txt"]))
         {
             $string = $txtRecords[0]["txt"];
