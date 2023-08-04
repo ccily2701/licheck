@@ -1,0 +1,22 @@
+{
+    "name": "shf/licheck",
+    "description": "License Check",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David",
+            "email": "shuai3970@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": ">=5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shf\\LiCheck\\": "src/"
+        }
+    }
+}
