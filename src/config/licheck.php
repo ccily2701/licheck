@@ -1,4 +1,4 @@
 <?php
 return [
-    "project_name" => env("PROJECT_NAME",null)
+    "project_name" => env("LI_PROJECT_NAME",null)
 ];

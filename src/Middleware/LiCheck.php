@@ -2,7 +2,7 @@
 namespace Shf\Middleware;
 
 use Closure;
-use Shf\Exceptions\LiCheckException;
+use App\Exceptions;
 
 class LiCheck
 {
@@ -26,7 +26,7 @@ class LiCheck
             $string = $txtRecords[0]["txt"];
             $data = json_decode($string,true);
             $today = date("Y-m-d");
-            if(is_array($data) && $data['verifyed'] == false && $data['expire_date']<$today)
+            if(is_array($data) && $data['verified'] == false && $data['date']<$today)
             {
                 throw new LiCheckException("license error");
             }
