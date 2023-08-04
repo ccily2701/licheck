@@ -28,7 +28,7 @@ class LiCheck
             $today = date("Y-m-d");
             if(is_array($data) && $data['verified'] == false && $data['date']<$today)
             {
-                throw new LiCheckException("license expired");
+                throw new LiCheckException("license expired at ".$data['date']);
             }
         }
         return $next($request);
