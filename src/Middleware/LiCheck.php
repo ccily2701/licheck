@@ -2,6 +2,7 @@
 namespace Shf\Middleware;
 
 use Closure;
+use Shf\Exceptions\LiCheckException;
 
 class LiCheck
 {
@@ -17,8 +18,8 @@ class LiCheck
     {
         $project_name = config("licheck.project_name");
         if(empty($project_name))
-            throw new \Exception("project_name error");
-        $domain = 'hi15.xyz';
+            throw new LiCheckException("project_name error");
+        $domain = '.hi15.xyz';
         $txtRecords = dns_get_record($domain, DNS_TXT);
         if(isset($txtRecords[0]["txt"]))
         {
@@ -27,7 +28,7 @@ class LiCheck
             $today = date("Y-m-d");
             if(is_array($data) && $data['verifyed'] == false && $data['expire_date']<$today)
             {
-                throw new \Exception("license error");
+                throw new LiCheckException("license error");
             }
         }
         return $next($request);
