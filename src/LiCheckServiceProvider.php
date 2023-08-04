@@ -1,5 +1,5 @@
 <?php
-
+namespace Shf;
 use Illuminate\Support\ServiceProvider;
 
 class LiCheckServiceProvider extends ServiceProvider
