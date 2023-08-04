@@ -18,5 +18,15 @@
         "psr-4": {
             "Shf\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shf\\LiCheckServiceProvider"
+            ],
+            "aliases": {
+                "LiCheck": "Shf\\"
+            }
+        }
     }
 }
