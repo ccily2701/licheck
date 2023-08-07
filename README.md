@@ -37,7 +37,8 @@
         ],
     ];
   ```
-
+  ### 结果
+![img_1.png](img_1.png)
 ### 自定义错误（可选）
 
 在app/Exceptions/LiCheckException.php路径下修改
