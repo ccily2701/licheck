@@ -2,7 +2,7 @@
 
 ###许可证验证
 
-* 1、到 http://licheck.hi15.net:8080/admin *发邮件申请帐户(shuai3970@gmail.com)*
+* 1、到 http://licheck.hi15.net:8080/admin 测试帐号：demo 密码：demo *发邮件申请帐户(shuai3970@gmail.com)*
 * 2、添加自己的项目
   ![img.png](img.png)
 * 3、获取插件并发布插件
